@@ -32,3 +32,9 @@ input, button {
   height: 450px;
   width: 300px;
 }
+
+footer {
+  clear: both;
+  text-align: center;
+  padding: 10px;
+}
