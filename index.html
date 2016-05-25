@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>movie app</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+
+      <h1>movie search</h1>
+
+      <div id="search-page">
+        <form class="movie" action="index.html" method="post">
+          <input id="search" type="text" name="s" placeholder="find a movie...">
+          <button type="submit" class="search">search</button>
+        </form>
+
+
+        <div id="results">
+
+        </div>
+      </div>
+      <button id="more-button" type="button" name="button">more movies</button>
+      <div id="details-page">
+        <a href="#" id="back"> &laquo; Back to search results</a>
+        <img class="poster">
+        <h1 class="title"></h1>
+        <p><label>Actors:</label><span class="actors"></span></p>
+        <p><label>Genre:</label><span class="genre"></span></p>
+        <p><label>Year:</label><span class="year"></span></p>
+        <p><label>Director:</label><span class="director"></span></p>
+        <p><label>Plot:</label><span class="plot"></span></p>
+
+      </div>
+    </div>
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

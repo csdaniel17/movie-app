@@ -1,0 +1,34 @@
+* {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.container {
+  text-align: center;
+  margin: auto;
+  padding: 50px;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+input, button {
+  font-size: 1.5em;
+}
+
+#results {
+  margin: 10px 0;
+  list-style: auto;
+  padding: 0;
+}
+
+.result {
+  float: left;
+  border: 2px solid black;
+  margin: 5px;
+}
+
+.result img {
+  height: 450px;
+  width: 300px;
+}
