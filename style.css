@@ -36,5 +36,20 @@ input, button {
 footer {
   clear: both;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
+}
+
+#details-page {
+  text-align: left;
+  width: 60%;
+  margin: auto;
+}
+
+#details-page label {
+  font-weight: bold;
+}
+
+.poster {
+  float: right;
+  padding: 30px 0 0 50px;
 }

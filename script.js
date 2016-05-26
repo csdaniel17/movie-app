@@ -1,7 +1,7 @@
 var page = 1;
 
 $(function() {
-  $("#details-page").hide();
+  $('#details-page').hide();
   $('#more-button').hide();
   $('form').submit(function(event){
     event.preventDefault();
@@ -15,7 +15,7 @@ $(function() {
     searchMovies();
   });
 
-  $("#back").click(function(event) {
+  $('#back').click(function(event) {
     event.preventDefault();
     $('#details-page').hide();
     $('#search-page').show();
@@ -36,17 +36,17 @@ $(function() {
         // console.log('Total Results: ', data);
         var total = Number(data.totalResults);
         if (total > page * 10) {
-          $("#more-button").show();
+          $('#more-button').show();
         }
         else {
-          $("#more-button").hide();
+          $('#more-button').hide();
         }
         page++;
         var results = data.Search;
         for (var i = 0; i < results.length; i++) {
           var link = $("<a>")
-            .data("data-imdbID", results[i].imdbID)
-            .attr("href", "http://www.imdb.com/title/" + results[i].imdbID + "/")
+            .data('data-imdbID', results[i].imdbID)
+            .attr('href', 'http://www.imdb.com/title/' + results[i].imdbID + '/')
             .addClass('result');
             if (results[i].Poster === 'N/A') {
               var img2 = $('<img>')
@@ -65,27 +65,26 @@ $(function() {
     });
   }
 
-  $("#search-page").on("click", ".result", function(event){
+  $('#search-page').on('click', '.result', function(event){
     event.preventDefault();
-    $('#more-button').hide();
-    var imdbID = $(this).data("data-imdbID");
+    var imdbID = $(this).data('data-imdbID');
     $.ajax({
-      method: "GET",
-      url: "http://www.omdbapi.com",
+      method: 'GET',
+      url: 'http://www.omdbapi.com',
       data: {
         i: imdbID,
-        plot: "full"
+        plot: 'full'
       },
       success: function(data){
-        $("#search-page").hide();
-        $("#details-page").show();
-        $("#details-page .poster").attr("src", data.Poster);
-        $("#details-page .title").text(data.Title);
-        $("#details-page .actors").text(data.Actors);
-        $("#details-page .plot").text(data.Plot);
-        $("#details-page .genre").text(data.Genre);
-        $("#details-page .year").text(data.Year);
-        $("#details-page .director").text(data.Director);
+        $('#search-page').hide();
+        $('#details-page').show();
+        $('#details-page .poster').attr('src', data.Poster);
+        $('#details-page .title').text(data.Title);
+        $('#details-page .actors').text(data.Actors);
+        $('#details-page .plot').text(data.Plot);
+        $('#details-page .genre').text(data.Genre);
+        $('#details-page .year').text(data.Year);
+        $('#details-page .director').text(data.Director);
       }
     });
   });
